@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Estate{% endblock %}</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Phudu:wght@500&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <a href="{% url 'main:home_view' %}" class="logo-link">HOME</a>
+    </div>
+
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li><a href="{% url 'main:home_view' %}">Home</a></li>
+        <li><a href="{% url 'main:properties_view' %}">Properties</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="{% url 'main:contact_view' %}">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-actions">
+      <span class="material-icons">person</span>
+      <a href="#" class="signup-text">Sign up</a>
+      <span id="sun-icon"  class="material-icons theme-btn active" role="button" tabindex="0" aria-label="Light mode">wb_sunny</span>
+      <span id="moon-icon" class="material-icons theme-btn"         role="button" tabindex="0" aria-label="Dark mode">dark_mode</span>
+    </div>
+  </nav>
+
+  
+  <div id="page-wrapper">
+    {% block content %}{% endblock %}
+  </div>
+
+  <script src="{% static 'js/darklightmode.js' %}"></script>
+
+</body>
+</html>
