@@ -29,5 +29,6 @@ def switch_mode(request):
     response.set_cookie('theme',new_mode,max_age=60*60*24*30)
     return response
 
-
+def services_view(request : HttpRequest):
+    return render(request,"main/services.html")
 

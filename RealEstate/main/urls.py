@@ -10,5 +10,7 @@ urlpatterns = [
     path('contact/',views.contact_view,name="contact_view"),
     path('about/',views.about_view,name="about_view"),
     path('switch_mode/',views.switch_mode,name="switch_mode"),
+    path('services/',views.services_view,name="services_view"),
+
 
 ]
